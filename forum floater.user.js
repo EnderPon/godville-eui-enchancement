@@ -44,7 +44,7 @@
         var row = document.createElement("tr");
         table.appendChild(row);
         var nameTD = document.createElement("td");
-        nameTD.innerHTML = '<a href="' + url +'">' + name + '</a>' + ' <small><a href="' + url +'">к концу</a></small>';
+        nameTD.innerHTML = '<a href="' + url +'">' + name + '</a>' + ' <small><a href="' + last +'">к концу</a></small>';
         var postsTD = document.createElement("td");
         postsTD.innerHTML = posts;
         var lastTD = document.createElement("td");
