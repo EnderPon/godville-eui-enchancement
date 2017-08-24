@@ -38,24 +38,16 @@
         var cntrl2 = document.getElementById("cntrl2");
         var chud = cntrl2.getElementsByClassName("mir_link_wrap")[0].getElementsByTagName("a")[0];
         var voice = document.getElementById("voice_submit_wrap").getElementsByTagName("input")[0];
-        /*
-        good.classList.add("disabled");
-        bad.classList.add("disabled");
-        chud.classList.add("disabled");
-        voice.classList.add("disabled");
-        */
+
 
         var map = document.getElementById("map");
         if (map){
-            //в данже (и море?)
-            //console.log(map.innerHTML.match(/бессилия/i));
             if(map.innerHTML.match(/бессилия/i)){
                 good.classList.add("disabled");
                 bad.classList.add("disabled");
                 chud.classList.add("disabled");
             }
         }
-        // найти id блока с противниками
         var fight = document.getElementById('o_info');
         if (fight){
             if(fight.innerHTML.match(/(лучазарный)|(неверующий)/i)){
