@@ -50,7 +50,7 @@
         }
         var fight = document.getElementById('o_info');
         if (fight){
-            if(fight.innerHTML.match(/(лучазарный)|(неверующий)/i)){
+            if(fight.innerHTML.match(/(лучезарный)|(неверующий)/i)){
                 bad.classList.add("disabled");
             }
             if(fight.innerHTML.match(/(паразитирующий)/i)){
