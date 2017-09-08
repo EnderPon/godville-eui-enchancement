@@ -24,7 +24,6 @@
         }
         localStorage.setItem("bingo", JSON.stringify(strItems));
         localStorage.setItem("bingoTime", Date.now());
-        alert("обновили");
     }
     function buttonUpdate(){
         setTimeout(updateBingo, 1000);
@@ -86,12 +85,5 @@
     }
     if (window.location.pathname.toString() == "/superhero"){
         var heroLoop = window.setInterval(heroPage, 1000);
-        /*var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = "#inventory {counter-reset: bingo;}\n";
-        css.innerHTML += ".bingo {color: red; counter-increment: bingo;}\n";
-        css.innerHTML += ".bingo:after {content: ' (Б)';}\n";
-        css.innerHTML += "#inventory ul:after {display: block; content: 'Шмоток для бинго: ' counter(bingo); margin-top: 5px; margin-left: -20px; text-align: center;}";
-        document.body.appendChild(css);*/
     }
 })();
