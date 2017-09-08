@@ -22,3 +22,11 @@
 ## Bingo helper
 Выдаёт класс ".bingo" предметам в инвентаре, подходящим под нынешнее бинго.
 Список искомых предметов подгружается в 00:10 по Мск, при каждом открытии газеты и при нажатии на "Заполнить ячейки".
+Вариант пользовательского CSS для бинго:
+
+```css
+#inventory {counter-reset: bingo;}
+.bingo {color: red; counter-increment: bingo;}
+.bingo:after {content: ' (Б)';}
+#inventory ul:after {display: block; content: 'Шмоток для бинго: ' counter(bingo); margin-top: 5px; margin-left: -20px; text-align: center;}
+```
