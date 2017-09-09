@@ -155,6 +155,10 @@
     }
 
     function main(){
+        if(document.getElementById('m_inventory')){ //если нашли "боевой" инвентарь - прекращаем работу
+            clearInterval(startTimer);
+            return;
+        }
         var dist1 = document.getElementById('hk_distance');
         var distanceButton = dist1.getElementsByClassName('popover-button')[0];
         if (!distanceButton) { //проверка на готовность страницы (появилась кнопка "Город")
