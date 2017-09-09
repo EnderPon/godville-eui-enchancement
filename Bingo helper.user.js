@@ -15,13 +15,17 @@
         var bgn = document.getElementById("bgn");
         var items = bgn.getElementsByTagName("span");
         var strItems = [/*"ыыы"*/]; // для тестов, не забыть убрать
-        if(document.getElementById("l_rank").style != "display:none;"){ // если видна строка "На сегодня все" - значит бинго закрыто
-            for(var i=0; i<items.length; i++){
-                if (items[i].className != "bgnk"){ // проверка заполненности ячеек
-                    strItems.push(items[i].innerHTML);
-                }
+        if(document.getElementById("cnt_rank").innerHTML == ""){ // если указан ранг на сегодня - значит бинго закрыто
+            localStorage.setItem("bingo", JSON.stringify([]));
+            localStorage.setItem("bingoTime", Date.now());
+            return;
+        }
+        for(var i=0; i<items.length; i++){
+            if (items[i].className != "bgnk"){ // проверка заполненности ячеек
+                strItems.push(items[i].innerHTML);
             }
         }
+        
         localStorage.setItem("bingo", JSON.stringify(strItems));
         localStorage.setItem("bingoTime", Date.now());
     }
@@ -63,7 +67,7 @@
             getBingo();
         }
         if (!inventory) {
-            heroLoop.stop();
+            clearInterval(heroLoop);
             console.log("stopped");
             return;
         }
