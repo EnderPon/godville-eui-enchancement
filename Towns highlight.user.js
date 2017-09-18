@@ -142,6 +142,9 @@
         }
         var gold = document.getElementById('hk_gold_we').getElementsByClassName('l_val')[0].innerHTML.match(/\d+/);
         //console.log(gold);
+        if (gold === null){
+            gold = 0; // если нет числа в строке денег - у нас 0 золота
+        }
         gold = parseInt(gold);
         var min_pens = (gold*pensList[town][0]/100/1000).toFixed(1);
         var max_pens = (gold*pensList[town][1]/100/1000).toFixed(1);
